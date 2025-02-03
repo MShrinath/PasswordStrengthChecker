@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark">
+    <div class="theme-toggle">
+        <button id="themeToggle">🌙</button>
+    </div>
+    
+    <div class="container">
+        <h1>Password Strength Checker</h1>
+        
+        <div class="password-input">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button id="togglePassword" aria-label="Toggle password visibility">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+            <button id="generatePassword" aria-label="Generate strong password" title="Generate strong password">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+        </div>
+
+        <div class="strength-meter">
+            <div class="progress-bar">
+                <div class="progress" id="progressBar"></div>
+            </div>
+            <p id="strengthText">Password Strength: <span>None</span></p>
+            <p id="complexityText">Password Complexity: <span>None</span></p>
+        </div>
+
+        <div class="requirements">
+            <h2>Password Requirements:</h2>
+            <ul>
+                <li id="length">✗ At least 8 characters</li>
+                <li id="uppercase">✗ At least one uppercase letter</li>
+                <li id="lowercase">✗ At least one lowercase letter</li>
+                <li id="number">✗ At least one number</li>
+                <li id="special">✗ At least one special character</li>
+            </ul>
+        </div>
+
+        <div class="exposure-estimate">
+            <h2>Password Exposure Estimate:</h2>
+            <p id="exposureTime">Time to crack: <span>-</span></p>
+        </div>
+
+        <div class="password-tips">
+            <button id="showTips" class="tips-button">
+                <i class="fa-solid fa-lightbulb"></i> Show Password Tips
+            </button>
+            <div class="tips-content" hidden>
+                <h3>Tips for a Strong Password:</h3>
+                <ul>
+                    <li>Use a mix of characters (letters, numbers, symbols)</li>
+                    <li>Make it at least 12 characters long</li>
+                    <li>Avoid common words and patterns</li>
+                    <li>Don't use personal information</li>
+                    <li>Use a unique password for each account</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

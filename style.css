@@ -1,0 +1,243 @@
+:root {
+    --bg-light: #f5f5f5;
+    --text-light: #333;
+    --primary-light: #4a90e2;
+    --container-light: #ffffff;
+    
+    --bg-dark: #1a1a1a;
+    --text-dark: #ffffff;
+    --primary-dark: #64b5f6;
+    --container-dark: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+body.light {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+body.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light .container {
+    background-color: var(--container-light);
+}
+
+.dark .container {
+    background-color: var(--container-dark);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.password-input {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    padding-right: 6rem; /* Space for both buttons */
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: transparent;
+    color: inherit;
+}
+
+.dark input[type="password"],
+.dark input[type="text"] {
+    border-color: #444;
+}
+
+#togglePassword,
+#generatePassword {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s;
+    color: inherit;
+}
+
+#togglePassword {
+    right: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#generatePassword {
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#togglePassword:hover,
+#generatePassword:hover {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.strength-meter {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s;
+    background-color: #ff4444;
+}
+
+.requirements {
+    margin-bottom: 2rem;
+}
+
+.requirements h2 {
+    margin-bottom: 1rem;
+}
+
+.requirements ul {
+    list-style: none;
+}
+
+.requirements li {
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.requirements li.valid {
+    color: #4caf50;
+}
+
+.exposure-estimate {
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.dark .exposure-estimate {
+    border-top-color: #444;
+}
+
+.exposure-estimate h2 {
+    margin-bottom: 1rem;
+}
+
+#strengthText,
+#complexityText {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#strengthText span,
+#complexityText span {
+    font-weight: bold;
+}
+
+.password-tips {
+    margin-top: 2rem;
+}
+
+.tips-button {
+    width: 100%;
+    padding: 0.8rem;
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tips-button:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.tips-content {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.tips-content h3 {
+    margin-bottom: 0.8rem;
+}
+
+.tips-content ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.tips-content li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.tips-content li::before {
+    content: "•";
+    position: absolute;
+    left: -1rem;
+}
